@@ -105,7 +105,7 @@ function constructor(L::AbstractMatrix{T}, perm::Union{Nothing,Tav}=nothing;
 
     n = size(L, 1)
 
-    # 1. Partition the matrix into the frist n-1 rows/columns
+    # 1. Partition the matrix into the first n-1 rows/columns
     if isnothing(perm)
         i_n = n
         L₁₁ = L[1:n-1, 1:n-1]
@@ -116,7 +116,7 @@ function constructor(L::AbstractMatrix{T}, perm::Union{Nothing,Tav}=nothing;
         chol_perm = 1:n-1
     end
 
-    # 2. Get the sparse cholesky factorization of the matrix
+    # 2. Get the sparse Cholesky factorization of the matrix
     factor = cholesky(L₁₁; perm=chol_perm)
     πᵀ = invperm(factor.p)
     C₁₁ = sparse(factor.L)

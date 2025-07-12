@@ -7,4 +7,4 @@
 
 ## Graphical Resistance Distance
 
-This is a test.
+

@@ -6,6 +6,14 @@ CurrentModule = QDistanceMatrixCompression
 
 Documentation for [QDistanceMatrixCompression](https://github.com/DiNiXi/QDistanceMatrixCompression.jl).
 
+$$
+L_{n-1} = C C^\top
+L_{n-1}^{-1} = C^{-\top} C^{-1}
+L_{n-1}^{-1} b_q = C^{-\top} C^{-1} b_q
+$$
+
+This is why we do `C \ b_q`.
+
 ```@index
 ```
 

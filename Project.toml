@@ -1,0 +1,13 @@
+name = "QDistanceMatrixCompression"
+uuid = "2e91e5f1-e6b5-4b53-935e-8d405a88ea63"
+authors = ["Dimitris Floros", "Nikos Pitsianis", "Xiaobai Sun"]
+version = "1.0.0-DEV"
+
+[compat]
+julia = "1.10"
+
+[extras]
+Test = "8dfed614-e22c-5e08-85e1-65c5234f0b40"
+
+[targets]
+test = ["Test"]

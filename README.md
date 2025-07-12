@@ -5,4 +5,6 @@
 [![Build Status](https://github.com/dinixi/QDistanceMatrixCompression.jl/actions/workflows/CI.yml/badge.svg?branch=main)](https://github.com/dinixi/QDistanceMatrixCompression.jl/actions/workflows/CI.yml?query=branch%3Amain)
 [![Coverage](https://codecov.io/gh/dinixi/QDistanceMatrixCompression.jl/branch/main/graph/badge.svg)](https://codecov.io/gh/dinixi/QDistanceMatrixCompression.jl)
 
-Resistance Distance
+## Graphical Resistance Distance
+
+This is a test.

@@ -14,8 +14,11 @@ rng = MersenneTwister(seed)
 
 @testset "GraphicalDistanceMatrix" begin
     # Create a Barabási-Albert graph with 10 nodes and 2 edges added at each step
-    @testset "dataset: $(dataset)" for dataset in [(_ -> barabasi_albert(10, 2; complete=true, seed=seed)), (_ -> watts_strogatz(10, 5, 0.01; seed=seed)), (_ -> weighted_random(10, 3; rng=rng))]
+    @testset "dataset: $(dataset)" for dataset in [(_ -> barabasi_albert(10, 2; complete=true, rng=rng)), (_ -> watts_strogatz(10, 5, 0.01; rng=rng)), (_ -> weighted_random(10, 3; rng=rng))]
         G = dataset(nothing)
+        while G isa AbstractMatrix ? !is_connected(SimpleGraph(G)) : !is_connected(G)
+            G = dataset(nothing)
+        end
         n = size(G)
         # Test construction
         @testset "Construction" begin

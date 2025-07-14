@@ -13,4 +13,4 @@ The resistance distance accounts for all possible paths between the two
 nodes and reflects the effects of branching, diffusion, and network dynamics. It has proven a robust alternative to the geodesic distance (i.e., shortest path length), which can be
 more sensitive to variations in topological structure, edge weight distribution, or both—especially in real-world sparse networks. 
 
-This package provides a high-performance Julia implementation that precomputes a compressed representation of the resistance distance matrix so that it can be queried (one-to-all and all-to-all) efficiently. 
+This package provides `Q-ray`, a high-performance Julia implementation that precomputes a compressed representation of the resistance distance matrix so that it can be queried (one-to-all and all-to-all) efficiently.

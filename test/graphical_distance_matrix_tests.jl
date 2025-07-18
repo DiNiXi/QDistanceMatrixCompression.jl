@@ -13,9 +13,14 @@ seed = 42
 rng = MersenneTwister(seed)
 
 @testset "GraphicalDistanceMatrix" begin
-  # Create a Barabási-Albert graph with 10 nodes and 2 edges added at each step
+
+  @testset "cube exact" begin
+    @test resistance_distance(Graphs.grid([2,2,2]))[:,1] ≈ [0, 7, 7, 9, 7, 9, 9, 10]./12 
+  end
+  # test different graphs
   @testset "dataset: $(dataset)" for dataset in [
     (_ -> binary_tree(4)),
+    (_ -> grid([2,2,2,2])),
     (_ -> barabasi_albert(10, 2; complete=true, rng=rng)),
     (_ -> watts_strogatz(10, 5, 0.01; rng=rng)),
     (_ -> weighted_random(10, 3; rng=rng)),

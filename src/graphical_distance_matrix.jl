@@ -130,7 +130,7 @@ function constructor(L::AbstractMatrix{T}, perm::Union{Nothing,Tav}=nothing;
         τ * nnz(C₁₁)
     end
 
-    C₁₁⁻¹ = spsolve(C₁₁, Iₛₚ, nnz_threshold)
+    C₁₁⁻¹ = spsolve(C₁₁, Iₛₚ, nnz_threshold) # alternative: C₁₁⁻¹ = factor.L \ Iₛₚ (slower for most cases)
 
     # add element n at the end of the permutation
     append!(πᵀ, n)

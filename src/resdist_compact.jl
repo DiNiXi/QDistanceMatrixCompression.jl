@@ -47,7 +47,7 @@ function _form_laplacian_and_partition_compact_v2(A::SparseMatrixCSC{Tv,Ti}, fix
     Isp = spdiagm(ones(Float64, n-1))
     tau = 0.1 * size(C11, 1) * size(C11, 1) / 2
     if nnz(C11) < tau / 3
-        C11_inv = spsolve(C11, Isp, tau)
+        C11_inv = spsolve(C11, Isp, tau) # alternative: C11_inv = factor.L \ Isp (slower for most cases)
         dense = isempty(C11_inv)
     else
         dense = true
